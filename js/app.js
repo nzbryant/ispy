@@ -1,5 +1,8 @@
 App = Ember.Application.create();
 
+App.SIMPERIUM_APP_ID = 'fall-diamonds-154';
+App.SIMPERIUM_TOKEN = 'dbf08dc43fb8482ea1101e8f086f29ec';
+
 App.Store = Ember.Object.extend({
   init: function() {
     this._super();
@@ -32,6 +35,15 @@ App.Store = Ember.Object.extend({
     var idMap = this.get('idMap');
     
     return idMap[id];
+  }
+});
+
+App.initializer({
+  name: 'simperium',
+  initialize: function() {
+    App.simperium = new Simperium(App.SIMPERIUM_APP_ID, {
+      token: App.SIMPERIUM_TOKEN
+    });
   }
 });
 
