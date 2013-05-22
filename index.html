@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>iSpy</title>
+  <link rel="stylesheet" href="css/normalize.css">
+  <link rel="stylesheet" href="css/foundation.css">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <script type="text/x-handlebars">
+    <nav class="top-bar">
+      <ul class="title-area">
+        <li class="name">
+          <h1>{{#linkTo index}}iSpy{{/linkTo}}</h1>
+        </li>
+        <li class="toggle-topbar menu-icon"><a href="#"><span>Menu</span></a></li>
+      </ul>
+
+      <section class="top-bar-section">
+        <ul class="left">
+          <li class="divider"></li>
+          <li class="active">{{#linkTo objectives}}Objectives{{/linkTo}}</li>
+          <li class="divider"></li>
+          <li class="active"><a href="#">New Objective</a></li>
+          <li class="divider"></li>
+          <li class="active">{{#linkTo users}}Users{{/linkTo}}</li>
+        </ul>
+
+        <!-- Right Nav Section -->
+        <ul class="right">
+          <li class="divider"></li>
+          <li class="has-form">
+            <form>
+              <div class="row collapse">
+                <div class="small-4 columns">
+                  <input type="text" name="email" placeholder="email">
+                </div>
+                <div class="small-4 columns">
+                  <input type="password" name="password" placeholder="Password">
+                </div>
+                <div class="small-4 columns">
+                  <a href="#" class="alert button">Log in</a>
+                </div>
+              </div>
+            </form>
+          </li>
+          <li class="has-form">
+            <a class="button" href="#">Log out</a>
+          </li>
+        </ul>
+      </section>
+    </nav>
+    {{outlet}}
+  </script>
+
+  <script type="text/x-handlebars" data-template-name="objectives">
+    <p>This is the objectives template.</p>
+  </script>
+
+  <script type="text/x-handlebars" data-template-name="users">
+    <p>This is the users template.</p>
+  </script>
+
+  <script src="js/libs/jquery-1.9.1.js"></script>
+  <script src="js/libs/handlebars-1.0.0-rc.3.js"></script>
+  <script src="js/libs/ember-1.0.0-rc.3.js"></script>
+  <script src="js/app.js"></script>
+</body>
+</html>
